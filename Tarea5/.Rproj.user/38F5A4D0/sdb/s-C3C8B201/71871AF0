@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# *********** Header *********** #\npath <- getwd()\npath <- paste0(path, \"/source\")\nif (dir.exists(path)) {\n    setwd(path)\n}\n\nif (file.exists(\"formulas.R\")) {\n    source(\"formulas.R\")\n} else {\n    stop(\"File required 'formulas.R' not found\")\n}\n# ------------------------------ #\n\nNs <- c(7000, 5000, 3000, 2000, 100, 300)\nZ <- ZValue(0.95)\nds <- seq(0.0001, 0.2, 0.00001)\np <- 0.05\nns <- matrix(NA, nrow = length(Ns), ncol = length(ds))\n\nfor (i in 1:length(Ns))\n\tfor(j in 1:length(ds))\n\t\tns[i, j] = SampleSize(Ns[i], Z, p, ds[j])\n\ncolors <- c(\"#b82c2c\", \"#066fa9\", \"#62b7a7\", \"#f36757\", \"#ffc87c\", \"#f8971c\")\n\nplot(x = ds, y = ns[1, ] , type = \"l\", col = colors[1],\n     xlab = \"Valores del margen de error (d)\", ylab = \"Tamanio de la muestra (n)\")\nfor (i in 2:length(Ns))\n    lines(x = ds, y = ns[i, ], type=\"l\", col=colors[i])\n\nlegend(\"topright\",\n\tlegend = c(\"N = 7000\", \"N = 5000\", \"N = 3000\", \"N = 2000\", \"N = 100\", \"N = 300\"),\n\tcex=0.3, fill = colors, ncol = 2)",
+    "created" : 1507500238476.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3843886237",
+    "id" : "71871AF0",
+    "lastKnownWriteTime" : 1507500736,
+    "last_content_update" : 1507500736,
+    "path" : "~/R/Probabilidad/Tarea5/source/ejercicio5.R",
+    "project_path" : "source/ejercicio5.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

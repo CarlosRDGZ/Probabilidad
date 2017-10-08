@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# *********** Header *********** #\npath <- getwd()\npath <- paste0(path, \"/source\")\nif (dir.exists(path)) {\n    setwd(path)\n}\n\nif (file.exists(\"formulas.R\")) {\n    source(\"formulas.R\")\n} else {\n    stop(\"File required 'formulas.R' not found\")\n}\n# ------------------------------ #\n\nNs <- seq(100, 8000, 10)\nZ <- ZValue(0.95)\nds <- c(0.01, 0.03, 0.05, 0.06, 0.07)\np <- 0.05\nns <- matrix(NA, nrow = length(ds), ncol = length(Ns))\n\nfor (i in 1:length(ds))\n\tfor(j in 1:length(Ns))\n\t\tns[i, j] = SampleSize(Ns[j], Z, p, ds[i])\n\ncolors <- rainbow(5)\n\nplot(x = ds, y = ns[, 1] , type = \"l\", col = colors[1],\n\txlab = \"\", ylab = \"\", axes = FALSE)\nfor (i in 2:length(ds))\n    lines(x = ds, y = ns[ ,i], type=\"l\", col=colors[i])\n\nx.axis <- ds\ny.axis <- seq(20, 100, 10)\naxis(1, at = x.axis)\naxis(2, at = y.axis)\n\ntitle(xlab=\"Valores del margen de error (d)\", col.lab=rgb(0,0.5,0))\ntitle(ylab = \"Tamano de la muestra (n)\", col.lab = rgb(0,0.5,0))\n\nabline(v=x.axis, col=\"lightgray\", lty=\"dotted\")\nabline(h=y.axis, col=\"lightgray\", lty=\"dotted\")",
+    "created" : 1507498166167.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2054002027",
+    "id" : "DC551F89",
+    "lastKnownWriteTime" : 1507500147,
+    "last_content_update" : 1507500147,
+    "path" : "~/R/Probabilidad/Tarea5/source/ejercicio4-mari.R",
+    "project_path" : "source/ejercicio4-mari.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

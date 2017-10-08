@@ -1,4 +1,16 @@
-source("Formulas.R")
+# *********** Header *********** #
+path <- getwd()
+path <- paste0(path, "/source")
+if (dir.exists(path)) {
+    setwd(path)
+}
+
+if (file.exists("formulas.R")) {
+    source("formulas.R")
+} else {
+    stop("File required 'formulas.R' not found")
+}
+# ------------------------------ #
 
 Ns <- c(7000, 5000, 3000, 2000, 100, 300)
 Z <- ZValue(0.95)
@@ -19,4 +31,4 @@ for (i in 2:length(Ns))
 
 legend("topleft",
 	legend = c("N = 7000", "N = 5000", "N = 3000", "N = 2000", "N = 100", "N = 300"),
-	cex=0.5, fill = colors, ncol = 2)
+	xpd = TRUE, inset = c(0, 0), bty = "n", fill = colors, cex = 1)

@@ -1,4 +1,16 @@
-source("Formulas.R")
+# *********** Header *********** #
+path <- getwd()
+path <- paste0(path, "/source")
+if (dir.exists(path)) {
+    setwd(path)
+}
+
+if (file.exists("formulas.R")) {
+    source("formulas.R")
+} else {
+    stop("File required 'formulas.R' not found")
+}
+# ------------------------------ #
 
 Ns <- c(7000, 5000, 3000, 2000, 100, 300)
 Z <- ZValue(0.95)
@@ -24,6 +36,5 @@ axis(2, at = y.axis)
 title(xlab="Valores de la proporcion (P)", col.lab=rgb(0,0.5,0))
 title(ylab = "Tamano de la muestra (n)", col.lab = rgb(0,0.5,0))
 
-# grid(nx = length(x.axis), ny = length(y.axis), col = "lightgray", lty = "dotted")
 abline(v=x.axis, col="lightgray", lty="dotted")
 abline(h=y.axis, col="lightgray", lty="dotted")
