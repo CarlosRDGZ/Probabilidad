@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "source(\"Formulas.R\")\n\nNs <- c(7000, 5000, 3000, 2000, 100, 300)\nZ <- ZValue(0.95)\nd <- 0.03\nps <- seq(0, 0.99, 0.0001)\nns <- matrix(NA, nrow = length(Ns), ncol = length(ps))\n\nfor (i in 1:length(Ns))\n\tfor(j in 1:length(ps))\n\t\tns[i, j] = SampleSize(Ns[i], Z, ps[j], d)\n\ncolors <- rainbow(6)\nplot(x = ps, y = ns[1, ], type = \"l\", col = colors[1], xlab = \"\", ylab = \"\", axes = FALSE)\nfor (i in 2:length(Ns))\n    lines(x = ps, y = ns[i, ], type=\"l\", col=colors[i])\n\nx.axis <- seq(0, 1, 0.1)\ny.axis <- c(0, 167.9212, 417.6890, 693.6477, 925.9250)\ny.axis1 <- seq(0, 1000, 500)\naxis(1, at = x.axis)\naxis(2, at = y.axis)\n\ntitle(xlab=\"Valores de la proporcion (P)\", col.lab=rgb(0,0.5,0))\ntitle(ylab = \"Tamano de la muestra (n)\", col.lab = rgb(0,0.5,0))\n\n# grid(nx = length(x.axis), ny = length(y.axis), col = \"lightgray\", lty = \"dotted\")\nabline(v=x.axis, col=\"lightgray\", lty=\"dotted\")\nabline(h=y.axis, col=\"lightgray\", lty=\"dotted\")",
+    "created" : 1507491967356.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3023695000",
+    "id" : "22ECD4A8",
+    "lastKnownWriteTime" : 1507493409,
+    "last_content_update" : 1507493409,
+    "path" : "~/R/Probabilidad/Tarea5/ejercicio3-mari.R",
+    "project_path" : "ejercicio3-mari.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
