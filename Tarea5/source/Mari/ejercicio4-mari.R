@@ -1,4 +1,4 @@
-# *********** Includes *********** #
+# *********** Header *********** #
 path <- getwd()
 path <- paste0(path, "/source")
 if (dir.exists(path)) {
@@ -10,7 +10,7 @@ if (file.exists("formulas.R")) {
 } else {
     stop("File required 'formulas.R' not found")
 }
-# -------------------------------- #
+# ------------------------------ #
 
 Ns <- c(7000, 5000, 3000, 2000, 100, 300)
 Z <- ZValue(0.95)
@@ -22,15 +22,22 @@ for (i in 1:length(Ns))
 	for(j in 1:length(ds))
 		ns[i, j] = SampleSize(Ns[i], Z, p, ds[j])
 
-colors <- c("#b82c2c", "#066fa9", "#62b7a7", "#f36757", "#ffc87c", "#f8971c")
+colors <- rainbow(6)
 
 plot(x = ds, y = ns[1, ] , type = "l", col = colors[1],
-     xlab = "Margen de error (d)", ylab = "Muestra (n)")
+     xlab = "", ylab = "", axes = FALSE)
 for (i in 2:length(Ns))
     lines(x = ds, y = ns[i, ], type="l", col=colors[i])
 
-legend("topright",
-	legend = c("N = 7000", "N = 5000", "N = 3000", "N = 2000", "N = 100", "N = 300"),
-	xpd = TRUE, inset = c(0, 0), bty = "n", fill = colors, cex = 0.8,
-	x.intersp = 0.5, y.intersp = 0.7, title = "Poblacion (N)")
-par(mar = c(5, 4, 1, 2))
+x.axis <- c(0.000100, 0.050075, 0.100050, 0.150025, 0.200000)
+y.axis <- seq(0, 7000, 1000)
+ axis(1, at = x.axis)
+axis(2, at = y.axis)
+
+# title(xlab="Valores del margen de error (d)", col.lab=rgb(0,0,0))
+title(xlab="Margen de error", col.lab=rgb(0,0,0))
+# title(ylab = "Tamanio de la muestra (n)", col.lab = rgb(0,0,0))
+title(ylab = "Muestra", col.lab = rgb(0,0,0))
+# 
+# abline(v=x.axis, col="lightgray", lty="dotted")
+# abline(h=y.axis, col="lightgray", lty="dotted")
