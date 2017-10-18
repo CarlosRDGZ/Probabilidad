@@ -31,7 +31,7 @@ for (i in 2:length(Ns))
 
 x.axis <- c(0.000100, 0.050075, 0.100050, 0.150025, 0.200000)
 y.axis <- seq(0, 7000, 1000)
- axis(1, at = x.axis)
+axis(1, at = x.axis)
 axis(2, at = y.axis)
 
 # title(xlab="Valores del margen de error (d)", col.lab=rgb(0,0,0))

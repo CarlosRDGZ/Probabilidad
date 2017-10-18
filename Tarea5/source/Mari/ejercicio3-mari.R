@@ -33,8 +33,9 @@ y.axis1 <- seq(0, 1000, 500)
 axis(1, at = x.axis)
 axis(2, at = y.axis)
 
-title(xlab="Valores de la proporcion (P)", col.lab=rgb(0,0.5,0))
-title(ylab = "Tamano de la muestra (n)", col.lab = rgb(0,0.5,0))
-
+title(xlab="Valores de X", col.lab=rgb(0,0.5,0))
+title(ylab = "Probabilidad Puntual (P)", col.lab = rgb(0,0.5,0))
+axis(1, at = x.axis)
+axis(2, at = y.axis)
 abline(v=x.axis, col="lightgray", lty="dotted")
 abline(h=y.axis, col="lightgray", lty="dotted")
