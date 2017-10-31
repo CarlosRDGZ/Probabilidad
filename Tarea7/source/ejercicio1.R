@@ -44,8 +44,6 @@ ps <- matrix(NA, nrow = 2, ncol = length(x))
 
 for(i in 1:length(x)) {
     ps[1, i] <- dbinom(i, n, p)
-}
-for(i in 1:length(x)) {
     ps[2, i] <- dpois(i, lambda)
 }
 
@@ -94,8 +92,6 @@ ps <- matrix(NA, nrow = 2, ncol = length(x))
 
 for(i in 1:length(x)) {
     ps[1, i] <- pbinom(i, n, p)
-}
-for(i in 1:length(x)) {
     ps[2, i] <- ppois(i, lambda)
 }
 
