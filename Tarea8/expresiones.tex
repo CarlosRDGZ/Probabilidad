@@ -19,19 +19,82 @@ $$P(2\leq X \leq6)=\Phi(3)-\Phi(0)$$
 $$P(2\leq X \leq6)=0.0013-0.5$$
 $$P(2\leq X \leq6)=0.9772$$
 
+% 2.-
+% a)
+$$P(-\sigma<Z<\sigma)=P(-1<Z<1)$$
+$$P(-\sigma<Z<\sigma)=P(Z<1)-P(Z<-1)$$
+$$P(-\sigma<Z<\sigma)=\Phi(1)-\Phi(-1)$$
+$$P(-\sigma<Z<\sigma)=0.8413447-0.1586553$$
+$$P(-\sigma<Z<\sigma)=0.6826895$$
+% b)
+$$P(-2\sigma<Z<2\sigma)=P(-2<Z<2)$$
+$$P(-2\sigma<Z<2\sigma)=P(Z<2)-P(Z<-2)$$
+$$P(-2\sigma<Z<2\sigma)=\Phi(2)-\Phi(-2)$$
+$$P(-2\sigma<Z<2\sigma)=0.9772499-0.02275013$$
+$$P(-2\sigma<Z<2\sigma)=0.9544997$$
+% c) P(-3σ<Z< 3σ)
+$$P(-3\sigma<Z<3\sigma)=P(-3<Z<3)$$
+$$P(-3\sigma<Z<3\sigma)=P(Z<3)-P(Z<-3)$$
+$$P(-3\sigma<Z<3\sigma)=\Phi(3)-\Phi(-3)$$
+$$P(-3\sigma<Z<3\sigma)=0.9986501-0.001349898$$
+$$P(-3\sigma<Z<3\sigma)=0.9973002$$
+% d) P(-1.68σ<Z< 1.68σ)
+$$P(-1.68\sigma<Z<1.68\sigma)=P(-1.68<Z<1.68)$$
+$$P(-1.68\sigma<Z<1.68\sigma)=P(Z<1.68)-P(Z<-1.68)$$
+$$P(-1.68\sigma<Z<1.68\sigma)=\Phi(1.68)-\Phi(-1.68)$$
+$$P(-1.68\sigma<Z<1.68\sigma)=0.9535213-0.04647866$$
+$$P(-1.68\sigma<Z<1.68\sigma)=0.9070427$$
+% e) Encuentre el valor de Z0 tal que  P(-Z0 <Z< Z0)=0.90
+$$P(-Z_{0}<Z<Z_{0})=0.9\Rightarrow2*P(Z>Z_{0})=1-0.9$$
+$$P(Z>Z_{0})=\frac{0.1}{2}=0.05$$
+$$P(Z>Z_{0})=1-P(Z\leqZ_{0})$$
+$$P(Z\leqZ_{0})=1-0.05=0.95$$
+$$Z_{0}=1.65$$
+% f) Encuentre el valor de Z0 tal que  P(-Z0 <Z< Z0)=0.95
+$$P(-Z_{0}<Z<Z_{0})=0.95\Rightarrow2*P(Z>Z_{0})=1-0.95$$
+$$P(Z>Z_{0})=\frac{0.05}{2}=0.025$$
+$$P(Z>Z_{0})=1-P(Z\leqZ_{0})$$
+$$P(Z\leqZ_{0})=1-0.025=0.975$$
+$$Z_{0}=1.96$$
+% g) Encuentre el valor de Z0 tal que  P(-Z0 <Z< Z0)=0.80
+$$P(-Z_{0}<Z<Z_{0})=0.8\Rightarrow2*P(Z>Z_{0})=1-0.8$$
+$$P(Z>Z_{0})=\frac{0.2}{2}=0.1$$
+$$P(Z>Z_{0})=1-P(Z\leqZ_{0})$$
+$$P(Z\leqZ_{0})=1-0.1=0.9$$
+$$Z_{0}=1.28$$
+% h) Encuentre el valor de Z0 tal que  P(-Z0 <Z< Z0)=0.99
+$$P(-Z_{0}<Z<Z_{0})=0.99\Rightarrow2*P(Z>Z_{0})=1-0.99$$
+$$P(Z>Z_{0})=\frac{0.01}{2}=0.005$$
+$$P(Z>Z_{0})=1-P(Z\leqZ_{0})$$
+$$P(Z\leqZ_{0})=1-0.005=0.995$$
+$$Z_{0}=2.57$$
+
 % 3.-
 $$P(X>95)$$
 $$P(X>95)=1-P(X<95)$$
 $$P(X>95)=1-P(Z<\frac{95-100}{4})$$
-$$P(X>95)=1-P\Phi(-1.25)$$
+$$P(X>95)=1-\Phi(-1.25)$$
 $$P(X>95)=1-0.1056$$
 $$P(X>95)=0.8944$$
 
+$$P(X\leq95)$$
+$$P(X\leq95)=P(Z<\frac{95-100}{4})$$
+$$P(X\leq95)=\Phi(-1.25)$$
+$$P(X\leq95)=0.1056$$
+
+$$\mbox{Utilidad para cada alambre}$$
+$$P(X>95)*(25)+P(X\leq95)*(10)$$
+$$(0.8944)(25)=22.36$$
+$$(0.1056)(10)=1.056$$
+$$22.36+1.056=23.416$$
+
+$$\mbox{Ganancia esperada}$
+$
 % 4.-
 $$P(X<k)=0.1$$
 $$P(\frac{X-5}{1.2}<\frac{k-5}{1.2})=0.1$$
 $$P(Z<\frac{k-5}{1.2})=0.1$$
 $$\Phi(\frac{k-5}{1.2})=0.1$$
-$$\frac{k-5}{1.2}={\Phi}^{-1}(0.1)=1.852442$$
-$$k=(1.852442)(1.2)+5$$
-$$
+$$\frac{k-5}{1.2}={\Phi}^{-1}(0.1)=1.28$$
+$$k-5=(1.28)(1.2)$$
+$$k=1.536-5
